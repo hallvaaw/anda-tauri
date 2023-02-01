@@ -44,6 +44,10 @@
     </form>
 </body>
 <script>
+
+const fs = window.__TAURI__.fs
+
+
 function clearInput(e) {
     if (e.value == "0") {
         e.value = "";
@@ -61,10 +65,13 @@ function handleSubmit(e) {
     const value = Object.fromEntries(data.entries());
     value.metrics = data.getAll("metrics");
     valueString = JSON.stringify(value);
-    const { invoke } = window.__TAURI__.tauri
-    invoke('greet', { name: valueString })
-        .then((response) => console.log(response))
-    }
+    fs.writeFile("PATH", valueString, function(err, result) {
+        if(err) {
+            console.log('error')
+        };
+    });
+}
+
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
 </script>

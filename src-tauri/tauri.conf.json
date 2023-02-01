@@ -7,17 +7,30 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "anda_tauri",
+    "productName": "tauri-app",
     "version": "0.0.0"
   },
   "tauri": {
     "allowlist": {
+      "fs": {
+        "all": true,
+        "scope": ["**"],
+        "readFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "copyFile": false,
+        "createDir": false,
+        "removeDir": false,
+        "removeFile": false,
+        "renameFile": false,
+        "exists": false
+      },
       "all": false,
       "shell": {
         "all": false,
         "open": true
       }
-    },
+      },
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
@@ -62,7 +75,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "anda_tauri",
+        "title": "tauri-app",
         "width": 800
       }
     ]
