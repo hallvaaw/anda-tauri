@@ -48,7 +48,6 @@
 const fs = window.__TAURI__.fs
 const readFile = fs.readTextFile
 
-
 function clearInput(e) {
     if (e.value == "0") {
         e.value = "";
@@ -61,12 +60,15 @@ function refillInput(e) {
     }
 }
 
-
-
+// Read cell parameters
 async function handleContents(e) {
     const contents = await readFile('PATH');
 }
 
+const imageDir = document.getElementById('image-dir');
+imageDir.addEventListener('click', handleContents);
+
+// Write image analysis parameters
 function handleSubmit(e) {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -80,10 +82,8 @@ function handleSubmit(e) {
     });
 }
 
-const imageDir = document.getElementById('image-dir');
-imageDir.addEventListener('click', handleContents);
-
 const form = document.getElementById('form');
 form.addEventListener('submit', handleSubmit);
+
 </script>
 </html>
