@@ -8,7 +8,7 @@
 <body>
     <h1>Perform image analysis</h1>
     <form id="form">
-        <input type="file" value="Select image directory">
+        <input id="image-dir" type="button" value="Select image directory">
         <div class="grid ar">
             <label for="aspect-ratio">Neurite aspect ratio</label>
             <input id="aspect_ratio" class="number-input" name="aspect-ratio" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" value=0>
@@ -46,6 +46,7 @@
 <script>
 
 const fs = window.__TAURI__.fs
+const readFile = fs.readTextFile
 
 
 function clearInput(e) {
@@ -59,6 +60,13 @@ function refillInput(e) {
         e.value = "0";
     }
 }
+
+
+
+async function handleContents(e) {
+    const contents = await readFile('PATH');
+}
+
 function handleSubmit(e) {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -67,12 +75,15 @@ function handleSubmit(e) {
     valueString = JSON.stringify(value);
     fs.writeFile("PATH", valueString, function(err, result) {
         if(err) {
-            console.log('error')
+            console.log('error writing file')
         };
     });
 }
 
-const form = document.querySelector('form');
+const imageDir = document.getElementById('image-dir');
+imageDir.addEventListener('click', handleContents);
+
+const form = document.getElementById('form');
 form.addEventListener('submit', handleSubmit);
 </script>
 </html>
