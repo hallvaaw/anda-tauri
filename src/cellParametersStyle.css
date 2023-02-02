@@ -92,3 +92,7 @@ section {
 .cell-line {
     margin-bottom: 12px;
 }
+
+#cell-type.invalid {
+    border-color: red;
+}
