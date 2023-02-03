@@ -16,13 +16,13 @@
             <span class="visible">Please enter cell line</span>
         </div>
         <section>
-            <div id="cells">
+            <div id="min">
                 <div class="grid ar">
                     <label for="min-cell-size">Min. cell size (px)</label>
                     <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
                 </div>
-                <div class="grid">
-                    <label for="max-cell-size">Max. cell size(px)</label>
+                <div class="grid ar">
+                    <label for="min-neurite-size">Min. neurite size (px)</label>
                     <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
                 </div>
                 <div class="grid">
@@ -30,13 +30,13 @@
                     <input class="circularity" type="number" name="metrics" min=0 max=1 step=0.01 value=0.00>
                 </div>
                 <div class="grid">
-                    <label for="max-cell-circ">Max. cell circularity</label>
-                    <input class="circularity" type="number" name="metrics" min=0 max=1 step=0.01 value=1.00>
+                    <label for="min-neurite-circ">Min. neurite circularity</label>
+                    <input class="circularity" type="number" name="metrics" min=0 max=1 step=0.01 value=0.00>
                 </div>
             </div>
-            <div id="neurites">
-                <div class="grid ar">
-                    <label for="min-neurite-size">Min. neurite size (px)</label>
+            <div id="max">
+                <div class="grid">
+                    <label for="max-cell-size">Max. cell size(px)</label>
                     <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
                 </div>
                 <div class="grid">
@@ -44,8 +44,8 @@
                     <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
                 </div>
                 <div class="grid">
-                    <label for="min-neurite-circ">Min. neurite circularity</label>
-                    <input class="circularity" type="number" name="metrics" min=0 max=1 step=0.01 value=0.00>
+                    <label for="max-cell-circ">Max. cell circularity</label>
+                    <input class="circularity" type="number" name="metrics" min=0 max=1 step=0.01 value=1.00>
                 </div>
                 <div class="grid">
                     <label for="max-neurite-circ">Max. neurite circularity</label>

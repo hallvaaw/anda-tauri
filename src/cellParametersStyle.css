@@ -72,12 +72,12 @@ section {
     display: table;
 }
 
-#cells {
+#min {
     float:left;
     width: 50%;
 }
 
-#neurites {
+#max {
     float: right;
     width: 40%;
 }
