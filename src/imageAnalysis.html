@@ -8,7 +8,8 @@
 <body>
     <h1>Perform image analysis</h1>
     <form id="form">
-        <input id="image-dir" type="button" value="Select image directory">
+        <input id="file" class="inputfile" type="file" name="file">
+        <label id="inputfile-label" for="file">Add cell line...</label>
         <div class="grid ar">
             <label for="aspect-ratio">Neurite aspect ratio</label>
             <input id="aspect_ratio" class="number-input" name="aspect-ratio" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" value=0>
@@ -26,7 +27,7 @@
                 <input class="checkbox" type="checkbox" name="metrics" value="neurite-attachment">
                 <label class="checklabel" for="neurite-attachment">Neurite attachment points</label>
             </div>
-            <div class="checkline">
+            <div id="watershed" class="checkline">
                 <input class="checkbox" type="checkbox" name="metrics" value="apply-watershed">
                 <label class="checklabel" for="apply-watershed">Apply watershed segmentation</label>
             </div>

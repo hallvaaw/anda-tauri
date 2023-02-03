@@ -126,4 +126,5 @@ section {
 
 #cell-type.invalid {
     border-color: red;
+    background-color: #fff4f3;
 }
