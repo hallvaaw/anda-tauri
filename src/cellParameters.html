@@ -8,45 +8,48 @@
 <body>
     <h1>Create cell parameters input file</h1>
     <form action="">
-        <div class="grid cell-line">
-            <label for="aspect_ratio">Cell line</label>
-            <input id="cell-type" class="numberinput" type="text" name="metrics" value=>
+        <div class="cell-grid">
+            <div class="grid cell-line">
+                <label for="celltype">Cell line</label>
+                <input id="cell-type" class="numberinput" type="text" name="metrics" value=>
+            </div>
+            <span class="visible">Please enter cell line</span>
         </div>
         <section>
             <div id="cells">
                 <div class="grid ar">
-                    <label for="aspect_ratio">Min. cell size (px)</label>
+                    <label for="min-cell-size">Min. cell size (px)</label>
                     <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
                 </div>
                 <div class="grid">
-                    <label for="aspect_ratio">Max. cell size(px)</label>
+                    <label for="max-cell-size">Max. cell size(px)</label>
                     <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
                 </div>
                 <div class="grid">
-                    <label for="aspect_ratio">Min. cell circularity</label>
-                    <input class="numberinput" type="number" name="metrics" value=0.00>
+                    <label for="min-cell-circ">Min. cell circularity</label>
+                    <input class="circularity" type="number" name="metrics" min=0 max=1 step=0.01 value=0.00>
                 </div>
                 <div class="grid">
-                    <label for="aspect_ratio">Max. cell circularity</label>
-                    <input class="numberinput" type="number" name="metrics" value=1.00>
+                    <label for="max-cell-circ">Max. cell circularity</label>
+                    <input class="circularity" type="number" name="metrics" min=0 max=1 step=0.01 value=1.00>
                 </div>
             </div>
             <div id="neurites">
                 <div class="grid ar">
-                    <label for="aspect_ratio">Min. neurite size (px)</label>
+                    <label for="min-neurite-size">Min. neurite size (px)</label>
                     <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
                 </div>
                 <div class="grid">
-                    <label for="aspect_ratio">Max. neurite size(px)</label>
+                    <label for="max-neurite-size">Max. neurite size(px)</label>
                     <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
                 </div>
                 <div class="grid">
-                    <label for="aspect_ratio">Min. neurite circularity</label>
-                    <input class="numberinput" type="number" name="metrics" value=0.00>
+                    <label for="min-neurite-circ">Min. neurite circularity</label>
+                    <input class="circularity" type="number" name="metrics" min=0 max=1 step=0.01 value=0.00>
                 </div>
                 <div class="grid">
-                    <label for="aspect_ratio">Max. neurite circularity</label>
-                    <input class="numberinput" type="number" name="metrics" value=1.00>
+                    <label for="max-neurite-circ">Max. neurite circularity</label>
+                    <input class="circularity" type="number" name="metrics" min=0 max=1 step=0.01 value=1.00>
                 </div>
             </div>
         </section>
@@ -78,6 +81,8 @@ function handleSubmit(e) {
     e.preventDefault();
 
     const cellType = document.getElementById("cell-type");
+    const errorSpan = document.querySelector("span");
+    errorSpan.classList.add("invalid");
     cellType.classList.add("invalid");
     if (!cellType.value) {
         cellType.classList.add("invalid");    
