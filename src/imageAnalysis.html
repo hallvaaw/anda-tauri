@@ -10,9 +10,10 @@
     <form id="form">
         <input id="file" class="inputfile" type="file" name="file">
         <label id="inputfile-label" for="file">Add cell line...</label>
+        <span id="filename"></span>
         <div class="grid ar">
             <label for="aspect-ratio">Neurite aspect ratio</label>
-            <input id="aspect_ratio" class="number-input" name="aspect-ratio" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" value=0>
+            <input id="aspect_ratio" class="number-input" name="aspect-ratio" min=0 type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" value=0>
         </div>
         <div class="checkboxes">
             <div class="checkline">
@@ -65,6 +66,16 @@ function refillInput(e) {
 async function handleContents(e) {
     const contents = await readFile('PATH');
 }
+
+const output = document.querySelector("span");
+const fileReader = document.getElementById("file");
+fileReader.addEventListener("change", (event) => {
+    // const fileName = event.target.file;
+    let fileName = fileReader.files[0].name;
+    output.textContent = fileName;
+})
+
+
 
 const imageDir = document.getElementById('image-dir');
 imageDir.addEventListener('click', handleContents);

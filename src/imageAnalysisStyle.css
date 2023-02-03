@@ -29,7 +29,7 @@ form {
     text-decoration: none;
     background-color: #2563eb;
     border-width: 2px;
-    border-radius: 8px;
+    border-radius: 6px;
     color: rgb(229 231 235);
     font-weight: 700;
     padding: 6px;
@@ -44,8 +44,10 @@ form {
     cursor: pointer;
 }
 
-.btn {
+#filename {
+    font-size: 12px;
 }
+
 
 .grid {
     width: 40%;
