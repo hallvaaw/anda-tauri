@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <title>Automated Neuronal Differentiation Analyzer</title>
-        <link rel="stylesheet" href="cellParametersStyle.css">
+    <meta charset="UTF-8">
+    <title>Automated Neuronal Differentiation Analyzer</title>
+    <link rel="stylesheet" href="cellParametersStyle.css">
 </head>
 <body>
     <h1>Create cell parameters input file</h1>
@@ -19,11 +19,11 @@
             <div id="min">
                 <div class="grid ar">
                     <label for="min-cell-size">Min. cell size (px)</label>
-                    <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
+                    <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" min=0 value=0>
                 </div>
                 <div class="grid ar">
                     <label for="min-neurite-size">Min. neurite size (px)</label>
-                    <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
+                    <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" min=0 value=0>
                 </div>
                 <div class="grid">
                     <label for="min-cell-circ">Min. cell circularity</label>
@@ -37,11 +37,11 @@
             <div id="max">
                 <div class="grid">
                     <label for="max-cell-size">Max. cell size(px)</label>
-                    <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
+                    <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" min=0 value=0>
                 </div>
                 <div class="grid">
                     <label for="max-neurite-size">Max. neurite size(px)</label>
-                    <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" value=0>
+                    <input class="numberinput" type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" name="metrics" min=0 value=0>
                 </div>
                 <div class="grid">
                     <label for="max-cell-circ">Max. cell circularity</label>
