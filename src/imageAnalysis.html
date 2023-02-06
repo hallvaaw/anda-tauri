@@ -72,13 +72,17 @@ const fileReader = document.getElementById("file");
 fileReader.addEventListener("change", (event) => {
     // const fileName = event.target.file;
     let fileName = fileReader.files[0].name;
-    output.textContent = fileName;
+    if (fileName.includes(".json")) {
+        output.textContent = fileName;
+    } else {
+        output.textContent = 'Error: file must be JSON format!';
+    }
 })
 
 
 
-const imageDir = document.getElementById('image-dir');
-imageDir.addEventListener('click', handleContents);
+// const imageDir = document.getElementById('image-dir');
+// imageDir.addEventListener('click', handleContents);
 
 // Write image analysis parameters
 function handleSubmit(e) {
