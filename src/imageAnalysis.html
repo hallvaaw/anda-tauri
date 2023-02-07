@@ -8,15 +8,20 @@
 <body>
     <h1>Perform image analysis</h1>
     <form id="form">
-        <input id="file" class="inputfile" type="file" name="file">
-        <label id="inputfile-label" for="file">Add cell line...</label>
-        <span id="filename"></span>
+        <div>
+            <input id="file" class="inputfile" type="file" name="file">
+            <label id="inputfile-label" for="file">Add cell line...</label>
+            <span id="filename"></span>
+            <!--input id="file" class="inputfile" type="file" name="file">
+            <label id="inputfile-label" for="file">Add cell line...</label>
+            <span id="filename"></span-->
+        </div>
         <div class="grid ar">
             <label for="aspect-ratio">Neurite aspect ratio</label>
             <input id="aspect_ratio" class="number-input" name="aspect-ratio" min=0 type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" value=0>
         </div>
         <div class="checkboxes">
-            <div class="checkline">
+            <!--div class="checkline">
                 <input class="checkbox" type="checkbox" name="metrics" value="neurite-lengths">
                 <label class="checklabel" for="neurite-lengths">Neurite lengths</label>
             </div>
@@ -26,7 +31,7 @@
             </div>
             <div class="checkline">
                 <input class="checkbox" type="checkbox" name="metrics" value="neurite-attachment">
-                <label class="checklabel" for="neurite-attachment">Neurite attachment points</label>
+                <label class="checklabel" for="neurite-attachment">Neurite attachment points</label-->
             </div>
             <div id="watershed" class="checkline">
                 <input class="checkbox" type="checkbox" name="metrics" value="apply-watershed">
@@ -49,6 +54,7 @@
 
 const fs = window.__TAURI__.fs
 const readFile = fs.readTextFile
+const readDir = fs.readDir
 
 function clearInput(e) {
     if (e.value == "0") {
@@ -64,7 +70,8 @@ function refillInput(e) {
 
 // Read cell parameters
 async function handleContents(e) {
-    const contents = await readFile('PATH');
+    const contents = await readFile(e);
+    console.log(contents);
 }
 
 const output = document.querySelector("span");
@@ -74,6 +81,7 @@ fileReader.addEventListener("change", (event) => {
     let fileName = fileReader.files[0].name;
     if (fileName.includes(".json")) {
         output.textContent = fileName;
+        handleContents(fileName);
     } else {
         output.textContent = 'Error: file must be JSON format!';
     }
