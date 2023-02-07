@@ -50,6 +50,7 @@ label {
     padding: 12px;
     margin-right: auto;
     margin-bottom: 8px;
+    width: 150px;
 }
 
 .numberinput:hover {
@@ -68,6 +69,7 @@ label {
 .circularity:hover {
     border-color: rgb(191 219 254);
 }
+
 section {
     display: table;
 }
@@ -121,7 +123,7 @@ section {
 }
 
 .cell-line {
-    margin-bottom: 12px;
+    margin-bottom: 2px;
 }
 
 #cell-type.invalid {
@@ -130,7 +132,15 @@ section {
 }
 
 #dropdown {
-    width: 100px;
-    height: 30px;
+    width: 178px;
+    height: 45px;
     font-size: 14px;
+    border-width: 2px;
+    border-radius: 4px;
+    border-color: rgb(75 88 99);
+    margin-bottom: 16px;
+}
+
+#dropdown:hover {
+    border-color: rgb(191 219 254);
 }
