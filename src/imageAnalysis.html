@@ -8,31 +8,19 @@
 <body>
     <h1>Perform image analysis</h1>
     <form id="form">
-        <div>
+        <div class="grid">
+            <input id="directory" class="inputfile" type="file" name="directory">
+            <label id="inputfile-label" for="directory">Image directory</label>
+            <span id="directory-name"></span>
             <input id="file" class="inputfile" type="file" name="file">
             <label id="inputfile-label" for="file">Add cell line...</label>
             <span id="filename"></span>
-            <!--input id="file" class="inputfile" type="file" name="file">
-            <label id="inputfile-label" for="file">Add cell line...</label>
-            <span id="filename"></span-->
         </div>
         <div class="grid ar">
             <label for="aspect-ratio">Neurite aspect ratio</label>
             <input id="aspect_ratio" class="number-input" name="aspect-ratio" min=0 type="number" onfocus="clearInput(this)" onfocusout="refillInput(this)" value=0>
         </div>
         <div class="checkboxes">
-            <!--div class="checkline">
-                <input class="checkbox" type="checkbox" name="metrics" value="neurite-lengths">
-                <label class="checklabel" for="neurite-lengths">Neurite lengths</label>
-            </div>
-            <div class="checkline">
-                <input class="checkbox" type="checkbox" name="metrics" value="cell-count">
-                <label class="checklabel" for="cell-count">Cell body count</label>
-            </div>
-            <div class="checkline">
-                <input class="checkbox" type="checkbox" name="metrics" value="neurite-attachment">
-                <label class="checklabel" for="neurite-attachment">Neurite attachment points</label-->
-            </div>
             <div id="watershed" class="checkline">
                 <input class="checkbox" type="checkbox" name="metrics" value="apply-watershed">
                 <label class="checklabel" for="apply-watershed">Apply watershed segmentation</label>
@@ -54,7 +42,9 @@
 
 const fs = window.__TAURI__.fs
 const readFile = fs.readTextFile
-const readDir = fs.readDir
+const addDir = fs.readDir
+
+const path = window.__TAURI__.path
 
 function clearInput(e) {
     if (e.value == "0") {
@@ -69,22 +59,35 @@ function refillInput(e) {
 }
 
 // Read cell parameters
-async function handleContents(e) {
-    const contents = await readFile(e);
+async function handleFile(e) {
+    const fileContents = await readFile(e);
     console.log(contents);
 }
 
-const output = document.querySelector("span");
+const fileOutput = document.getElementById("filename");
 const fileReader = document.getElementById("file");
 fileReader.addEventListener("change", (event) => {
-    // const fileName = event.target.file;
     let fileName = fileReader.files[0].name;
     if (fileName.includes(".json")) {
-        output.textContent = fileName;
-        handleContents(fileName);
+        fileOutput.textContent = fileName;
+        handleFile(fileName);
     } else {
-        output.textContent = 'Error: file must be JSON format!';
+        fileOutput.textContent = 'Error: file must be JSON format!';
     }
+})
+
+
+async function handleDirectory(e) {
+    const directoryContents = await path.dirname(e);
+    console.log(directoryContents);
+}
+
+const directoryOutput = document.getElementById("directory-name");
+const directoryReader = document.getElementById("directory");
+directoryReader.addEventListener("change", (event) => {
+    let directoryName = directoryReader.files[0].name;
+    directoryOutput.textContent = directoryName;
+    handleDirectory(directoryName);
 })
 
 

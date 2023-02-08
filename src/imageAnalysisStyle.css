@@ -35,8 +35,8 @@ form {
     padding: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    margin-right: 32px;
-    margin-top: 20px;
+    margin-right: 48px;
+    margin-top: 12px;
 }
 
 .inputfile + label:hover {
@@ -47,7 +47,6 @@ form {
 #filename {
     font-size: 12px;
 }
-
 
 .grid {
     width: 40%;
