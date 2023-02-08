@@ -75,8 +75,7 @@
         </section>
         <div class="btns">
             <a id="cancel" class="btn" href="index.html">Cancel</a>
-            <a id="submit" class="btn" href="index.html">Submit</a>
-            <button type="submit">submit</button>
+            <a id="submit" class="btn" type="submit" href="index.html">Submit</a>
         </div>
     </form>
 </body>
@@ -116,7 +115,7 @@ function handleSubmit(e) {
 }
 
 const form = document.querySelector('form');
-form.addEventListener('submit', handleSubmit);
+form.addEventListener('click', handleSubmit);
 
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("dropdown").addEventListener("change", function() {
