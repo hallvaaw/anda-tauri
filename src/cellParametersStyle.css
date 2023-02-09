@@ -91,6 +91,7 @@ section {
     background-color: #2563eb;
     border-width: 2px;
     border-radius: 8px;
+    border: none;
     color: rgb(229 231 235);
     font-weight: 700;
     padding: 6px;
@@ -144,3 +145,4 @@ section {
 #dropdown:hover {
     border-color: rgb(191 219 254);
 }
+
