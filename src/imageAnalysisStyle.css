@@ -99,6 +99,7 @@ label {
     font-family: sans-serif;
     text-decoration: none;
     background-color: #2563eb;
+    border: none;
     border-width: 2px;
     border-radius: 8px;
     color: rgb(229 231 235);

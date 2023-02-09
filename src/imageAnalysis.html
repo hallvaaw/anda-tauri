@@ -31,9 +31,7 @@
             </div>
             <div class="btns">
                 <a id="cancel" class="btn" href="index.html">Cancel</a>
-                <a id="submit" class="btn" type="submit">Submit</a>
-                <input type="button" id="save-button" value="Save JSON">
-                <button type="submit">submit</button>
+                <input id="submit" class="btn" type="Submit" value="Submit">
             </div>
         </div>
     </form>
@@ -61,7 +59,6 @@ function refillInput(e) {
 // Read cell parameters
 async function handleFile(e) {
     const fileContents = await readFile(e);
-    console.log(contents);
 }
 
 const fileOutput = document.getElementById("filename");
