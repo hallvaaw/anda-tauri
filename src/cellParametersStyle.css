@@ -44,6 +44,7 @@ label {
 }
 
 .numberinput {
+    border: solid;
     border-width: 2px;
     border-radius: 4px;
     border-color: rgb(75 88 99);
@@ -58,6 +59,7 @@ label {
 }
 
 .circularity {
+    border: solid;
     border-width: 2px;
     border-radius: 4px;
     border-color: rgb(75 88 99);
@@ -104,6 +106,7 @@ section {
 #submit:hover {
     background-color: #3b82f6;
     color: rgb(249 250 251);
+    cursor: pointer;
 }
 
 .btn:active {
