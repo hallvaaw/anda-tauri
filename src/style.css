@@ -9,7 +9,7 @@ body.index {
 }
 
 main.index {
-    width: 20%;
+    width: 40%;
     display: grid;
     column-count: 1;
     vertical-align: top;
@@ -110,6 +110,7 @@ label {
     line-height: 20px;
     font-weight: 700;
     margin-left: 3px;
+    margin-bottom: -3px;
 }
 
 .numberinput {
@@ -252,14 +253,6 @@ form {
 
 #watershed {
     margin-top: 26px;
-}
-
-label {
-    font-family: sans-serif;
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 700;
-    margin-left: 3px;
 }
 
 .checkboxes {
