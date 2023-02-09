@@ -44,6 +44,11 @@ form {
     cursor: pointer;
 }
 
+.inputfile + label:active {
+    background-color: #1d4ed8;
+    cursor: pointer;
+}
+
 #filename {
     font-size: 12px;
 }
@@ -117,8 +122,8 @@ label {
     cursor: pointer;
 }
 
-.btn:active {
-    border-color: #e5e7eb;
+#submit:active {
+    background-color: #1d4ed8;
 }
 
 #cancel {
@@ -131,7 +136,8 @@ label {
 }
 
 #cancel:active {
-    color: blue;
+    background-color: #9ca3af;
+    color: #1f2937;
 }
 .btns {
     margin-top: 40px;

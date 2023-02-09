@@ -109,8 +109,8 @@ label {
     cursor: pointer;
 }
 
-.btn:active {
-    border-color: #e5e7eb;
+#submit:active {
+    background-color: #1d4ed8;
 }
 
 #cancel {
@@ -120,6 +120,11 @@ label {
 
 #cancel:hover {
     color: #d1d5db;
+}
+
+#cancel:active {
+    background-color: #9ca3af;
+    color: #1f2937;
 }
 
 .btns {
