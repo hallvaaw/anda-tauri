@@ -72,16 +72,17 @@ label {
     border-color: rgb(191 219 254);
 }
 
-section {
+.metric-box {
     display: table;
+    column-count: 2;
 }
 
-#min {
+.min {
     float:left;
     width: 50%;
 }
 
-#max {
+.max {
     float: right;
     width: 40%;
 }
@@ -100,7 +101,6 @@ section {
     padding-left: 8px;
     padding-right: 8px;
     margin-right: 32px;
-    margin-top: 20px;
 }
 
 #submit:hover {
