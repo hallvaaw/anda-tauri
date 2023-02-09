@@ -47,7 +47,7 @@ label {
     border: solid;
     border-width: 2px;
     border-radius: 4px;
-    border-color: rgb(75 88 99);
+    border-color: #4B5863;
     padding: 12px;
     margin-right: auto;
     margin-bottom: 8px;
@@ -55,21 +55,21 @@ label {
 }
 
 .numberinput:hover {
-    border-color: rgb(191 219 254);
+    border-color: #bfd3fe;
 }
 
 .circularity {
     border: solid;
     border-width: 2px;
     border-radius: 4px;
-    border-color: rgb(75 88 99);
+    border-color: #4b5863;
     padding: 12px;
     margin-bottom: 8px;
     width: 150px;
 }
 
 .circularity:hover {
-    border-color: rgb(191 219 254);
+    border-color: #bfd3fe;
 }
 
 .metric-box {
@@ -95,7 +95,7 @@ label {
     border-width: 2px;
     border-radius: 8px;
     border: none;
-    color: rgb(229 231 235);
+    color: #e5e7eb;
     font-weight: 700;
     padding: 6px;
     padding-left: 8px;
@@ -105,21 +105,21 @@ label {
 
 #submit:hover {
     background-color: #3b82f6;
-    color: rgb(249 250 251);
+    color: #f9fafb;
     cursor: pointer;
 }
 
 .btn:active {
-    border-color: rgb(229 231 235);
+    border-color: #e5e7eb;
 }
 
 #cancel {
-    background-color: rgb(243 244 246);
-    color: rgb(75 85 99);
+    background-color: #f3f4f6;
+    color: #4b5563;
 }
 
 #cancel:hover {
-    color: rgb(209 213 219);
+    color: #d1d5db;
 }
 
 .btns {
@@ -141,11 +141,11 @@ label {
     font-size: 14px;
     border-width: 2px;
     border-radius: 4px;
-    border-color: rgb(75 88 99);
+    border-color: #4B5863;
     margin-bottom: 16px;
 }
 
 #dropdown:hover {
-    border-color: rgb(191 219 254);
+    border-color: #bfd3fe;
 }
 
