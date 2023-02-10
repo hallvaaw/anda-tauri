@@ -59,26 +59,26 @@
             <div class="metric-box">
                 <div class="grid min">
                     <label for="min-cell-circ">Min. cell circularity</label>
-                    <input class="numberinput" type="number" onfocusout="refillMinCirc(this)"  name="metrics" min=0 max=1 step=0.01 value=0.00>
+                    <input class="numberinput" type="number" onfocusout="refillMinCirc(this)" name="metrics" min=0 max=1 step=0.01 value=0.00>
                 </div>
                 <div class="grid max">
                     <label for="max-cell-circ">Max. cell circularity</label>
-                    <input class="numberinput" type="number" onfocusout="refillMaxCirc(this)"  name="metrics" min=0 max=1 step=0.01 value=1.00>
+                    <input class="numberinput" type="number" onfocusout="refillMaxCirc(this)" name="metrics" min=0 max=1 step=0.01 value=1.00>
                 </div>
             </div>
             <div class="metric-box">
                 <div class="grid min">
                     <label for="min-neurite-circ">Min. neurite circularity</label>
-                    <input class="numberinput" type="number" onfocusout="refillMinCirc(this)"  name="metrics" min=0 max=1 step=0.01 value=0.00>
+                    <input class="numberinput" type="number" onfocusout="refillMinCirc(this)" name="metrics" min=0 max=1 step=0.01 value=0.00>
                 </div>
                 <div class="grid max">
                     <label for="max-neurite-circ">Max. neurite circularity</label>
-                    <input class="numberinput" type="number" onfocusout="refillMaxCirc(this)"  name="metrics" min=0 max=1 step=0.01 value=1.00>
+                    <input class="numberinput" type="number" onfocusout="refillMaxCirc(this)" name="metrics" min=0 max=1 step=0.01 value=1.00>
                 </div>
             </div>
         </section>
-        <div class="btns">
-            <a class="btn cancel" href="index.html">Cancel</a>
+        <div class="btns cell-parameters">
+            <a class="btn cancel" onclick="history.back()">Cancel</a>
             <input id="submit" class="btn" type="submit" value="Submit">
         </div>
     </form>
@@ -100,13 +100,13 @@ function refillInput(e) {
 }
 
 function refillMinCirc(e) {
-    if (e.value == "" || e.value == "0") {
+    if (e.value == "" || e.value == 0) {
         e.value = "0.00";
     }
 }
 
 function refillMaxCirc(e) {
-    if (e.value == "" || e.value == "1") {
+    if (e.value == "" || e.value == 1) {
         e.value = "1.00";
     }
 }
@@ -143,6 +143,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // cancel.addEventListener("click", )
 
 
+const bodyEl = document.querySelector("body");
+bodyEl.addEventListener('mouseup', (e) => {
+    if (e.bodyEl == 3) {
+        console.log("AAAAAA");
+    }
+});
 
 </script>
 </html>

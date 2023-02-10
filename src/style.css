@@ -34,7 +34,7 @@ img {
     padding: 6px;
     padding-left: 8px;
     padding-right: 8px;
-    margin-right: 32px;
+    margin-right: 30px;
     margin-top: 20px;
 }
 
@@ -67,6 +67,7 @@ p {
 }
 
 /* Cell parameters */
+
 body.cell-parameters {
     width: 50%;
     background-color: #e2e8f0;
@@ -96,11 +97,11 @@ span {
     margin-top: 35px;
     margin-left: 40px;
     white-space: nowrap;
-    color: red;
     display: none;
 }
 
 span.invalid {
+    color: red;
     display: block;
 }
 
@@ -150,6 +151,7 @@ label {
 .cancel:hover {
     background-color: #f3f4f6;
     color: #d1d5db;
+    cursor: pointer;
 }
 
 .cancel:active {
@@ -159,6 +161,9 @@ label {
 
 .btns {
     margin-top: 8px;
+    bottom: 0%;
+    position: fixed;
+    margin-bottom: 20px;
 }
 
 .cell-line {
@@ -184,9 +189,14 @@ label {
     border-color: #bfd3fe;
 }
 
+.btns.cell-parameters {
+    margin-left: 94px;
+}
+
 /* Image analysis */
+
 body.image-analysis {
-    width: 65%;
+    width: 62%;
     background-color: #e2e8f0;
     margin-left: auto;
 }
@@ -268,3 +278,4 @@ form {
 .ar {
     margin-top: 18px;
 }
+
