@@ -17,7 +17,7 @@
         </div>
         <div class="grid">
             <label for="threshold">Threshold</label>
-            <select id="dropdown">
+            <select id="dropdown" name="metrics">
                 <option value="isodata">IsoData</option>
                 <option value="triangle">Triangle</option>
                 <option value="mean">Mean</option>
@@ -87,6 +87,14 @@
 
 const fs = window.__TAURI__.fs
 
+// Dropdown menu
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("dropdown").addEventListener("change", function() {
+        let selectedOption = this.value;
+    });
+});
+
+// Functions for clearing and refilling number inputs
 function clearInput(e) {
     if (e.value == "0") {
         e.value = "";
@@ -132,23 +140,6 @@ function handleSubmit(e) {
 
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
-
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("dropdown").addEventListener("change", function() {
-        let selectedOption = this.value;
-    });
-});
-
-// const cancel = document.getElementById("cancel");
-// cancel.addEventListener("click", )
-
-
-const bodyEl = document.querySelector("body");
-bodyEl.addEventListener('mouseup', (e) => {
-    if (e.bodyEl == 3) {
-        console.log("AAAAAA");
-    }
-});
 
 </script>
 </html>
