@@ -7,11 +7,11 @@
 </head>
 <body class="cell-parameters">
     <h1>Create cell parameters input file</h1>
-    <form action="">
+    <form>
         <div class="cell-grid">
             <div class="grid cell-line">
                 <label for="celltype">Cell line</label>
-                <input id="cell-type" class="numberinput" type="text" name="metrics" value=>
+                <input id="cell-type" class="numberinput" type="text" onfocus="removeClassNames(this)" name="metrics" value=>
             </div>
             <span class="visible">Please enter cell line</span>
         </div>
@@ -133,8 +133,18 @@ function handleSubmit(e) {
         const value = Object.fromEntries(data.entries());
         value.metrics = data.getAll("metrics");
         valueString = JSON.stringify(value);
-        fs.writeFile("METRICS", valueString)
+        fs.writeFile(cellType.value + ".json", valueString);
+        history.back();
     };
+}
+
+// Remove error message when cell line input is selected
+function removeClassNames(e) {
+    const cellType = document.getElementById("cell-type");
+    const errorSpan = document.querySelector("span");
+    errorSpan.classList.remove("invalid");
+    cellType.classList.remove("invalid");    
+
 }
 
 const form = document.querySelector('form');

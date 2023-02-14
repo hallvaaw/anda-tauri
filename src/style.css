@@ -99,6 +99,7 @@ span {
 }
 
 span.invalid {
+    margin-top: 35px;
     margin-left: 40px;
     color: red;
     display: block;
