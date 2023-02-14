@@ -133,7 +133,6 @@ function handleSubmit(e) {
         const value = Object.fromEntries(data.entries());
         value.metrics = data.getAll("metrics");
         valueString = JSON.stringify(value);
-        console.log(valueString);
         fs.writeFile("METRICS", valueString)
     };
 }

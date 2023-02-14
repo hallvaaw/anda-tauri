@@ -94,13 +94,12 @@ h1 {
 
 span {
     font-size: 14px;
-    margin-top: 35px;
-    margin-left: 40px;
     white-space: nowrap;
     display: none;
 }
 
 span.invalid {
+    margin-left: 40px;
     color: red;
     display: block;
 }
@@ -202,8 +201,7 @@ body.image-analysis {
 }
 
 form {
-    margin-top: 30px;
-    margin-bottom: 8px;
+    margin-top: 36px;
 }
 
 .inputfile {
@@ -241,19 +239,24 @@ form {
     cursor: pointer;
 }
 
+span#filename {
+    display: block;
+    margin-top: 22px;
+}
+
 #filename {
     font-size: 12px;
 }
 
 .file-input {
-    width: 40%;
+    width: 180px;
     display: grid;
-    column-count: 1;
+    column-count: 3;
 }
 
 .checkline {
     width: 80%;
-    margin-top: 6px;
+    margin-top: 10px;
 }
 
 .checkbox {
@@ -261,12 +264,8 @@ form {
     margin-right: 8px;
 }
 
-#watershed {
-    margin-top: 26px;
-}
-
 .checkboxes {
-    margin-top: 8px;
+    margin-top: 36px;
 }
 
 #submit:hover {
@@ -276,6 +275,9 @@ form {
 }
 
 .ar {
-    margin-top: 18px;
+    margin-top: 24px;
 }
 
+.btns.image-analysis {
+    margin-right: 10px;
+}

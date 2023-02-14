@@ -8,13 +8,12 @@
 <body class="image-analysis">
     <h1>Perform image analysis</h1>
     <form id="form">
-        <div class="file-input">
-            <input id="directory" class="inputfile" type="file" name="directory">
-            <label id="inputfile-label" for="directory">Image directory</label>
-            <span id="directory-name"></span>
-            <input id="file" class="inputfile" type="file" name="file">
-            <label id="inputfile-label" for="file">Add cell line...</label>
-            <span id="filename"></span>
+        <div class="cell-grid">
+            <div class="file-input">
+                <input id="file" class="inputfile" type="file" name="file">
+                <label id="inputfile-label" for="file">Add cell line...</label>
+            </div>
+                <span id="filename"></span>
         </div>
         <div class="grid ar">
             <label for="aspect-ratio">Neurite aspect ratio</label>
@@ -44,6 +43,7 @@ const addDir = fs.readDir
 
 const path = window.__TAURI__.path
 
+// Functions for clearing and refilling number input
 function clearInput(e) {
     if (e.value == "0") {
         e.value = "";
@@ -61,36 +61,19 @@ async function handleFile(e) {
     const fileContents = await readFile(e);
 }
 
+// Handle cell line parameters
 const fileOutput = document.getElementById("filename");
 const fileReader = document.getElementById("file");
 fileReader.addEventListener("change", (event) => {
     let fileName = fileReader.files[0].name;
     if (fileName.includes(".json")) {
+        console.log(fileName);
         fileOutput.textContent = fileName;
         handleFile(fileName);
     } else {
         fileOutput.textContent = 'Error: file must be JSON format!';
     }
 })
-
-
-async function handleDirectory(e) {
-    const directoryContents = await path.dirname(e);
-    console.log(directoryContents);
-}
-
-const directoryOutput = document.getElementById("directory-name");
-const directoryReader = document.getElementById("directory");
-directoryReader.addEventListener("change", (event) => {
-    let directoryName = directoryReader.files[0].name;
-    directoryOutput.textContent = directoryName;
-    handleDirectory(directoryName);
-})
-
-
-
-// const imageDir = document.getElementById('image-dir');
-// imageDir.addEventListener('click', handleContents);
 
 // Write image analysis parameters
 function handleSubmit(e) {
