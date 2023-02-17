@@ -7,7 +7,7 @@
 </head>
 <body class="image-analysis">
     <h1>Perform image analysis</h1>
-    <form id="form">
+    <form>
         <div class="cell-grid">
             <div class="file-input">
                 <input id="file" class="inputfile" type="file" name="file">
@@ -26,12 +26,12 @@
             </div>
             <div class="checkline">
                 <input class="checkbox" type="checkbox" name="metrics" value="save-outlines">
-                <label class="checklabel" for="save-outlines">Save motif outlines</label>
+                <label class="checklabel" for="save_outlines">Save motif outlines</label>
             </div>
-            <div class="btns image-analysis">
-                <button class="btn cancel" onclick="history.back()">Cancel</button>
-                <input id="submit" class="btn" type="Submit" value="Submit">
-            </div>
+        </div>
+        <div class="btns image-analysis">
+            <button class="btn cancel" onclick="history.back()">Cancel</button>
+            <input id="submit" class="btn" type="submit" value="Submit">
         </div>
     </form>
 </body>
@@ -67,7 +67,6 @@ const fileReader = document.getElementById("file");
 fileReader.addEventListener("change", (event) => {
     let fileName = fileReader.files[0].name;
     if (fileName.includes(".json")) {
-        console.log(fileName);
         fileOutput.textContent = fileName;
         handleFile(fileName);
     } else {
@@ -82,7 +81,7 @@ function handleSubmit(e) {
     const value = Object.fromEntries(data.entries());
     value.metrics = data.getAll("metrics");
     valueString = JSON.stringify(value);
-    fs.writeFile("PATH", valueString, function(err, result) {
+    fs.writeFile("ANDA_input.json", valueString, function(err, result) {
         if(err) {
             console.log('error writing file')
         };
