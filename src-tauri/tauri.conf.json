@@ -28,8 +28,14 @@
         "renameFile": false,
         "exists": false
       },
-      "all": false,
+      "all": true,
       "shell": {
+      "scope": [
+      {
+        "name": "run-anda",
+        "cmd": "sh ANDA.sh"
+      }
+      ],
         "all": true,
         "execute": true,
         "sidecar": true,
@@ -80,7 +86,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "tauri-app",
+        "title": "ANDA",
         "width": 800
       }
     ]

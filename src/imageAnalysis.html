@@ -31,7 +31,7 @@
         </div>
         <div class="btns image-analysis">
             <button class="btn cancel" onclick="history.back()">Cancel</button>
-            <input id="submit" class="btn" type="submit" value="Submit">
+            <input id="submit" class="btn" onclick="runCommand()" type="submit" value="Submit">
         </div>
     </form>
 </body>
@@ -42,6 +42,7 @@ const readFile = fs.readTextFile
 const addDir = fs.readDir
 
 const path = window.__TAURI__.path
+const command = window.__TAURI__.shell
 
 // Functions for clearing and refilling number input
 function clearInput(e) {
@@ -88,8 +89,17 @@ function handleSubmit(e) {
     });
 }
 
+
 const form = document.getElementById('form');
 form.addEventListener('submit', handleSubmit);
+
+
+const runAnda = new command.Command('run-anda');
+
+async function runCommand() {
+    runAnda.spawn();
+}
+
 
 </script>
 </html>
