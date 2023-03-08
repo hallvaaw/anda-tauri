@@ -30,16 +30,10 @@
       },
       "all": true,
       "shell": {
-      "scope": [
-      {
-        "name": "run-anda",
-        "cmd": "sh ANDA.sh"
-      }
-      ],
         "all": true,
         "execute": true,
-        "sidecar": true,
-        "open": true
+        "sidecar": false,
+        "open": false
       }
       },
     "bundle": {
