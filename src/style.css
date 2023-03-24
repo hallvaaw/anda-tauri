@@ -282,3 +282,14 @@ span#filename {
 .btns.image-analysis {
     margin-right: 10px;
 }
+
+@media (min-width: 1280px) {
+    h1 {
+        font-size: 30px;
+    }
+    label {
+        font-size: 19px;
+        margin-top: 9px;
+        margin-bottom: 3px;
+    }
+}
