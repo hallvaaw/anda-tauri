@@ -39,10 +39,8 @@
 
 const fs = window.__TAURI__.fs
 const readFile = fs.readTextFile
-const addDir = fs.readDir
 
-const path = window.__TAURI__.path
-const command = window.__TAURI__.shell
+const command = window.__TAURI__.shell.Command
 
 // Functions for clearing and refilling number input
 function clearInput(e) {
@@ -65,6 +63,7 @@ async function handleFile(e) {
 // Handle cell line parameters
 const fileOutput = document.getElementById("filename");
 const fileReader = document.getElementById("file");
+
 fileReader.addEventListener("change", (event) => {
     let fileName = fileReader.files[0].name;
     if (fileName.includes(".json")) {
@@ -93,11 +92,12 @@ function handleSubmit(e) {
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
 
-
-const runAnda = new command.Command('run-anda');
-
-async function runCommand() {
-    runAnda.spawn();
+const { invoke } = window.__TAURI__.tauri
+function runCommand() {
+    invoke('run_anda', { name: 'World!' })
+        .then((response) => {
+        window.header.innerHTML = response
+    })
 }
 
 </script>
