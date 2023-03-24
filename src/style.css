@@ -301,7 +301,13 @@ span#filename {
         height: 55px;
         font-size: 19px;
     }
-    option {
+    .checkline {
+        margin-top: 20px;
+    }
+    .inputfile + label {
         font-size: 19px;
+    }
+    .btn {
+        font-size: 38px;
     }
 }
