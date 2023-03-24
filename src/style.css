@@ -292,4 +292,16 @@ span#filename {
         margin-top: 9px;
         margin-bottom: 3px;
     }
+    .numberinput {
+        width: 230px;
+        font-size: 19px;
+    }
+    #dropdown {
+        width: 258px;
+        height: 55px;
+        font-size: 19px;
+    }
+    option {
+        font-size: 19px;
+    }
 }
